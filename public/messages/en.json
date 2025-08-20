@@ -1,0 +1,80 @@
+{
+  "Buttons": {},
+
+  "Globals": {
+    "home": "Home",
+    "about": "About",
+    "Clients": "Clients",
+    "contact": "Contact",
+    "products": "Products",
+    "Gallery": "Gallery",
+    "corn": "Corn",
+    "corn_title": "Corn",
+    "corn_history": "Corn History:",
+    "Qos": "The policy of our company depends on the adoption of quality global standards for all products. Our company uses the latest and most prestigious laboratories to examine products, ensuring quality control. In addition to Egyptian certificates, we have obtained international certifications such as ISO 9001:2015, ISO 22000:2005, and BRC (British Retail Consortium).",
+    "corn_history_desc": "Maize, known in some English-speaking countries as corn, is a cereal grain that was first grown by people in ancient Central America. Most historians believe maize was domesticated in the Tehuacan Valley of Mexico. The Olmec and Mayans cultivated it in numerous varieties throughout Mesoamerica, cooked, ground or processed through nixtamalization. Beginning about 2500 BC, the crop spread through much of the Americas. The region developed a trade network based on surplus and varieties of maize crops. After European contact with the Americas in the late 15th and early 16th centuries, explorers and traders carried maize back to Europe and introduced it to other countries. Maize spread to the rest of the world because of its ability to grow in diverse climates. Sugar-rich varieties called sweet corn are usually grown for human consumption as kernels, while field corn varieties are used for animal feed, various corn-based human food uses (including grinding into cornmeal, pressing into corn oil, and fermentation and distillation into alcoholic beverages like bourbon whiskey), and as chemical feedstock`s",
+    "corn_benifits": "Corn  Benefits:",
+    "corn_benifits_desc": "Some of the maize’s compounds, as well as the folic acid help regenerate the blood vessels walls, acting as a growth factor of blood vessels elasticity. Maze consumption for a period greater than 25 days may decrease the accumulation of toxins in the blood, slowing down the aging and illness of all organs. Maze has great effect against stress. It is rich in B group vitamins, especially vitamin B1, which affects the functioning of the nervous system, muscles, heart and the production of red blood cells. 150 g of maize provides approximately 25% of the required amount of vitamin B1 for an adult. Maize silk contains valuable compounds and is highly valued in herbal medicine, being used as a treatment for urinary disorders. The maize is used in the starch industry, the spirits, glucose and dextrin; the seeds are used for oil extraction, used in dietary nutrition. It also contains a leading anti-oxidant: vitamin E, which protects against arthritis. Including maize in the daily menu lowers the risk of heart disease and cancer. The carbohydrates found in maize give energy and prevent storage of fat",
+    "Products": "Products",
+    "corn_flour_title": "Yellow Maize / Corn Flour",
+    "corn_flour_desc": "Our company featuring in product of the finest corn flour of all kinds and for all using according to the best standards, which is used mainly for industry:",
+    "Breads": "Breads",
+    "Pancake_Waffle": "Pancake and Waffle",
+    "Confections": "Confections",
+    "Baby_Foods": "Baby Foods",
+    "Cereal_Snacks": "Cereal and Snacks",
+    "corn_grits_title": "Yellow Maize / Corn Grits",
+    "corn_grits_desc": "Our company featuring in product of the finest corn grits of all kinds and for all using according to the best standards, which is used mainly for industry:",
+    "Snack_food_Industry": "Snack food Industry",
+    "Corn_flakes_Industry": "Corn flakes Industry ",
+    "Confectionary_Industry": "Confectionary Industry"
+  },
+  "Sliders": {
+    "Corn_Grit": "Yellow Maize / Corn Grit",
+    "Corn_Grit_Desc": "· Snack food Industry · Corn flakes Industry · Confectionary Industry",
+    "Corn_Flour": "Yellow Maize / Corn Flour",
+    "Corn_Flour_Desc": "Y· Breads · Pancake and Waffle · Confections · Baby Foods · Cereal and Snacks",
+    "Maxicano_Factory": "MAXICANO Factory",
+    "Maxicano_Factory_Desc": "Is made by the most important Italian and Turkish production lines"
+  },
+  "About": {
+    "title": "About Us",
+    "desc": "Mexicano Company was established in 2021 as a joint venture between a group of foreign investors with a rich history in corn milling and producing the finest types of flour, semolina, and grits.",
+    "who_we_are": "Who We Are",
+    "who_we_are_desc": "With extensive experience in   corn milling, Mexicano Company was established in Egypt in 2021 as a joint venture between a group of Egyptian and Saudi investors. Our factory is built using the most advanced Italian and Turkish production lines, operated by leading engineers and experts in the field of milling and manufacturing machinery.",
+    "our_goals": "Our Goals",
+    "goal_desc": "The main goal of Mexicano Company is to enter the Egyptian and global markets with steady steps. We are highly confident that the company has developed a business strategy aimed at implementing all Egyptian and international standards and specifications to achieve excellence and innovation in this field. We focus on complying with the latest international regulations for   corn milling to reach the highest levels of Egyptian and international standards.",
+    "philosophy": "Our Philosophy Towards Customers:",
+    "philosophy_desc": "We have never compromised on the quality and services provided to our customers. We meet the needs of factories by milling the finest global   corn. We also believe in the importance of delighting customers and offering them products at highly competitive prices.",
+    "our_location": "Our Location:",
+    "our_location_desc": "Sector (I-G) - Red Sea Copper Company Land – Third Sector – Economic Zone – North West Gulf of Suez – Ain Sokhna – Suez Governorate.",
+    "store_data": "  تخزين المعلومات:",
+    "store_data_desc": "نحن نقوم بتخزين المعلومات الشخصية الخاصة بك على خوادم آمنة ومحمية. من خلال تقديم المعلومات الشخصية الخاصة بك، فأنت تقبل بنقل معلوماتك الشخصية وتخزينها على الخوادم الخاصة بنا. نحن نأخذ كل الاحتياطات للحفاظ على جميع المعلومات الشخصية الخاصة بك من الوصول غير المرخص له أو استخدامها أو الإفصاح عنها."
+  },
+  "Products": {
+    "Products": "Products",
+    "Corn_Grit": "Yellow Maize / Corn Grit",
+    "Corn_Grit_Desc": "Our company featuring in product of the finest corn grits of all kinds and for all using according to the best standards.",
+    "Corn_Flour": "Yellow Maize / Corn Flour",
+    "Corn_Flour_Desc": "Our company featuring in product of the finest corn flour of all kinds and for all using according to the best standards."
+  },
+  "Footer": {
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to our newsletter, and we will send you the latest products and events."
+    },
+    "email": {
+      "label": "Enter your email",
+      "placeholder": "Your email here"
+    },
+    "follow_us": "Follow us",
+    "contact_us": {
+      "title": "Contact us",
+      "phone": "+20 15 16 00 07 12",
+      "address": "Sector (I-G) - Land of Red Sea Copper Company – Third Sector – Economic Authority – Northwest of the Gulf of Suez – Ain Sokhna – Suez Governorate.",
+      "email": "info@africanocorn.com",
+      "website": "www.africanocorn.com"
+    },
+    "copyright": " All rights reserved by Mexicano 2021"
+  }
+}

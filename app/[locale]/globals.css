@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color-900: #ffe54d;
+  --secondary-color-900: #020066;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f7f6fa;
+  min-height: 50vh;
+  position: relative;
+  overflow-x: hidden;
+
+}
+
+
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.clip-slant {
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+}
+.parallelogram {
+  width: 250px; /* Set the width of the parallelogram */
+  height: 50px; /* Set the height of the parallelogram */
+ 
+  transform: skew(-30deg); /* Skew the element */
+  margin: 50px auto; /* Center it horizontally */
+}
+
+
+
+.swiper-pagination-bullet {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: orange !important;
+  border: 4px orange solid !important;
+  z-index: 50 !important;
+  margin-bottom: 5px !important;
+  opacity: 1;
+  margin: 20px !important;
+
+}
+.swiper-pagination-bullet-active {
+  background-color: orange !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+.swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+  background-color: #000 !important;
+  width: 6px !important;
+  height: 6px !important;
+  font-size: 4px !important;
+  position: absolute;
+  padding: 10px !important;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  -moz-background-size: 6px 6px;
+  -webkit-background-size: 6px 6px;
+  background-size: 6px 6px;
+  display: flex;
+  align-items: center;
+}
+ 
+ 
+
+ 
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+  width: 4px !important;
+  height: 4px !important;
+  font-size: 4px !important;
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  z-index: 10;
+  cursor: pointer;
+  margin-top: -22px;
+  -moz-background-size: 4px 4px;
+  -webkit-background-size: 4px 44px;
+  background-size: 4px 4px;
+  display: flex;
+  align-items: center;
+}

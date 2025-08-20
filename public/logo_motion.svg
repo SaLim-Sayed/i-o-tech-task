@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#4B2A16"/>
+    <!-- Light-grey container -->
+    <rect x="295" y="100" width="310" height="200" rx="15" fill="#E7E7E7"/>
+    <!-- Pillar (simplified) -->
+    <rect x="425" y="150" width="50" height="110" fill="#4B2A16"/>
+    <rect x="410" y="140" width="80" height="15" fill="#4B2A16"/>
+    <!-- Scales (simplified) -->
+    <line x1="450" y1="165" x2="365" y2="200" stroke="#4B2A16" stroke-width="8"/>
+    <line x1="450" y1="165" x2="535" y2="200" stroke="#4B2A16" stroke-width="8"/>
+    <ellipse cx="365" cy="230" rx="40" ry="12" fill="#4B2A16"/>
+    <ellipse cx="535" cy="230" rx="40" ry="12" fill="#4B2A16"/>
+    <!-- Feather (simplified) -->
+   
+  </svg>
