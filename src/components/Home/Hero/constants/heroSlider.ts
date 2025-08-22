@@ -35,10 +35,10 @@ export const SWIPER_CONFIG = {
     modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
     slidesPerView: 1 as const,
     pagination: {
-        clickable: true,
-        el: ".custom-pagination",
-        bulletClass: "custom-bullet",
-        bulletActiveClass: "custom-bullet-active",
+      clickable: true,
+      el: ".swiper-pagination",
+      bulletClass: "swiper-pagination-bullet",
+      bulletActiveClass: "swiper-pagination-bullet-active",
     },
     autoplay: {
         delay: 5000,

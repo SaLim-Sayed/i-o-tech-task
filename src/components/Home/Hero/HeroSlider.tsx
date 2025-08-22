@@ -30,6 +30,8 @@ const HeroSlider: React.FC = () => {
 
     return (
         <div className="flex w-full cursor-pointer overflow-hidden relative">
+                        <div className="swiper-pagination swiper-pagination-vertical  rtl:right-16 ltr:left-16  top-1/2 transform -translate-y-1/2"></div>
+
             <Swiper
                 {...SWIPER_CONFIG}
                 className="h-[500px] sm:h-screen w-full"
@@ -55,8 +57,7 @@ const HeroSlider: React.FC = () => {
                 ))}
             </Swiper>
 
-            <CustomStyles />
-            <CustomPagination />
+          
 
         </div>
     );
