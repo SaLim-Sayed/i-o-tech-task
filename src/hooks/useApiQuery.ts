@@ -1,20 +1,22 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import axios from 'axios';
+import { API_URL } from '../constant';
 
 type ApiQueryProps<TResponse> = {
   key: unknown[];
-  url: any;
+  endpoint: any;
   config?: UseQueryOptions<TResponse>;
   enabled?: boolean;
 };
 
 export function useApiQuery<TResponse = any>({
   key,
-  url,
+  endpoint,
   config,
   enabled=true,
 }: ApiQueryProps<TResponse>) {
-  const isQueryEnabled = !!url && enabled;
+  const isQueryEnabled = !!endpoint && enabled;
+   const fullUrl = `${API_URL}${endpoint}`;
 
   return useQuery<TResponse>({
     queryKey: key,
@@ -23,7 +25,7 @@ export function useApiQuery<TResponse = any>({
     enabled: isQueryEnabled,
      retry: 1, 
     queryFn: async () => {
-      const { data } = await axios.get<TResponse>(url);
+      const { data } = await axios.get<TResponse>(fullUrl);
       return data;
     },
     ...config,

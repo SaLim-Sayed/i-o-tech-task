@@ -89,10 +89,7 @@ export default function Navbar() {
           {/* Language Switcher and Mobile Menu */}
           <div className="flex items-center space-x-2">
             {/* Language Dropdown */}
-            <Dropdown classNames={{
-              base: "w-[100px]",
-               content: "w-[50px]",
-            }}>
+            <Dropdown  className="w-[100px]">
               <DropdownTrigger>
                 <Button
                   className="flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 min-w-unit-0"
@@ -111,11 +108,7 @@ export default function Navbar() {
                 onAction={(key) => handleLanguageChange(key)}
                 selectedKeys={[locale]}
                 selectionMode="single"
-                className="w-[100px]"
-                classNames={{
-                  base: "bg-[#4B2615] w-[100px]",
-                  list: "w-[100px]",
-                 }}
+  
               >
                 {(item) => (
                   <DropdownItem

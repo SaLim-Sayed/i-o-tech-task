@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-color-900: #ffe54d;
+  --primary-color-900: #643F2E;
   --secondary-color-900: #020066;
 }
 
@@ -40,8 +40,7 @@ body {
 .swiper-pagination-bullet {
   width: 18px !important;
   height: 18px !important;
-  background-color: orange !important;
-  border: 4px orange solid !important;
+   border: 2px white solid !important;
   z-index: 50 !important;
   margin-bottom: 5px !important;
   opacity: 1;
@@ -49,7 +48,7 @@ body {
 
 }
 .swiper-pagination-bullet-active {
-  background-color: orange !important;
+  background-color: white !important;
   width: 18px !important;
   height: 18px !important;
 }

@@ -1,4 +1,5 @@
 export interface SlideData {
+    description: string;
     id: number;
     title: string;
     subtitle: string;
