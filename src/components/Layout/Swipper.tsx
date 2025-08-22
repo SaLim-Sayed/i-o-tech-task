@@ -77,7 +77,7 @@ const formatApiSlides = (data: any[]): SlideData[] => {
         description: item.subtitle,
         imageSrc: "/images/slides/slide1.jpg",
         personImage: item.media?.formats?.small?.url
-            ? `http://localhost:1337${item.media.formats.small.url}`
+            ? `https://prepared-surprise-7a86930000.strapiapp.com${item.media.formats.small.url}`
             : "/images/person-placeholder.jpg",
         locale: item.locale,
         localizations: item.localizations || [],

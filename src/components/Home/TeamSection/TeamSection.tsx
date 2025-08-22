@@ -19,7 +19,7 @@ import {
 const getTeamMemberPhotoUrl = (
     photo: TeamMemberContent["photo"] | undefined
 ): string => {
-    const baseUrl = "http://localhost:1337"; // Base URL for Strapi assets
+    const baseUrl = "https://prepared-surprise-7a86930000.strapiapp.com"; // Base URL for Strapi assets
     if (photo?.formats?.small?.url) {
         return `${baseUrl}${photo.formats.small.url}`;
     }

@@ -48,6 +48,6 @@ export const SWIPER_CONFIG = {
     speed: 1000,
 };
 
-export const API_BASE_URL = "http://localhost:1337";
+export const API_BASE_URL = "https://prepared-surprise-7a86930000.strapiapp.com";
 export const DEFAULT_BACKGROUND_IMAGE = "/images/slides/slide1.jpg";
 export const DEFAULT_PERSON_PLACEHOLDER = "/images/person-placeholder.jpg";

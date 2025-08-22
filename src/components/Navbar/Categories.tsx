@@ -26,7 +26,7 @@ export default function Categories() {
     error,
   } = useApiQuery<CategoryList>({
     key: ["categories"],
-    url: "https://dummyjson.com/products/categories",
+    endpoint: "https://dummyjson.com/products/categories",
   });
 
   if (isLoading) return <div> </div>;
