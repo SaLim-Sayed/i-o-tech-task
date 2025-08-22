@@ -3,7 +3,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js-15.2.3-black)  
 ![React](https://img.shields.io/badge/React-19.0.0-blue)  
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)  
-![Redux](https://img.shields.io/badge/Zustand-5.0.1-lightgrey)  
+![Redux](https://img.shields.io/badge/Redux-5.0.1-lightgrey)  
 ![Swiper](https://img.shields.io/badge/Swiper-11.2.6-yellowgreen)  
 ![Strapi](https://img.shields.io/badge/Strapi-Backend-2E7D32)  
 
