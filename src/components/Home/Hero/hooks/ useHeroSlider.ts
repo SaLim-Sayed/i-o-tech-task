@@ -7,7 +7,7 @@ import { SlideData } from "../../@types/heroSlider";
 export const useHeroSlider = () => {
     const { data, isLoading, error } = useApiQuery<HeroResponse<HeroContent>>({
         key: ["slides"],
-        endpoint: "hero-contents?populate=*"
+        endpoint: "hero-contents"
     });
 
     // Process slides data

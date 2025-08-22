@@ -1,6 +1,7 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_URL } from '../constant';
+import { useLocale } from 'next-intl';
 
 type ApiQueryProps<TResponse> = {
   key: unknown[];
@@ -15,8 +16,9 @@ export function useApiQuery<TResponse = any>({
   config,
   enabled=true,
 }: ApiQueryProps<TResponse>) {
+  const locale = useLocale();
   const isQueryEnabled = !!endpoint && enabled;
-   const fullUrl = `${API_URL}${endpoint}`;
+   const fullUrl = `${API_URL}${endpoint}?locale=${locale}&populate=*`;
 
   return useQuery<TResponse>({
     queryKey: key,

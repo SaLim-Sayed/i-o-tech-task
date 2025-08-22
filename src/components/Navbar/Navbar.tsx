@@ -1,146 +1,215 @@
 "use client";
 
 import Logo from "@/public/images/image.png";
-import { Button, useDisclosure, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { BiMenu, BiWorld, BiX } from "react-icons/bi";
+import { BiMenu, BiX, BiChevronDown } from "react-icons/bi";
 import DrawerMenu from "./DrawerMenu";
-import { links } from "./links";
-import SearchAutocomplete from "./SearchAutocomplete";
+import { links, NavLink } from "./links";
 import { useLocale, useTranslations } from "next-intl";
 import Cookies from "js-cookie";
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@heroui/react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [isServicesPopoverOpen, setIsServicesPopoverOpen] = useState(false);
+
   const router = useRouter();
   const locale = useLocale();
   const pathName = usePathname();
   const t = useTranslations("Globals");
 
-  // Get the path without locale prefix
   const normalizedPath = pathName.startsWith(`/${locale}`)
     ? pathName.replace(`/${locale}`, "")
     : pathName;
 
-  // Function to handle language switching
-  const handleLanguageChange = (selectedLocale:any) => {
-    // Set the new locale in cookies
+  const handleLanguageChange = (selectedLocale: any) => {
     Cookies.set("NEXT_LOCALE", selectedLocale, { expires: 365 });
-    
-    // Construct the new path
+
     let newPath;
-    
-    if (normalizedPath === "" || normalizedPath === "/") {
-      // If we're on the home page
-      newPath = selectedLocale === "en" ? "/" : "/ar";
+    if (selectedLocale === "en") {
+      newPath = normalizedPath === "" ? "/" : normalizedPath;
     } else {
-      // For other pages, add the locale prefix if it's Arabic
-      newPath = selectedLocale === "en" ? normalizedPath : `/ar${normalizedPath}`;
+      newPath = `/ar${normalizedPath === "" ? "/" : normalizedPath}`;
     }
-    
-    // Navigate to the new path
     router.push(newPath);
   };
 
-  // Language options for dropdown
   const languageOptions = [
-    {
-      key: "en",
-      label: "English",
-      flag: "🇺🇸"
-    },
-    {
-      key: "ar",
-      label: "العربية",
-      flag: "🇸🇦"
-    }
+    { key: "en", label: "English" },
+    { key: "ar", label: "العربية" },
   ];
 
   return (
     <div>
-      <nav className="z-[50] fixed left-0 right-0 top-0 mx-auto w-[100%] py-2 shadow-md">
+      <nav className="z-50 fixed left-0 right-0 top-0 mx-auto bg-[#6D3E2C] w-full py-4 shadow-md text-white">
         <div className="container mx-auto flex items-center justify-between px-4">
           <Link href={locale === "en" ? "/" : "/ar"}>
             <Image src={Logo} alt="Logo" width={100} height={40} />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden space-x-6 text-white md:flex">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={locale === "en" ? link.href : `/ar${link.href}`}
-                className="transition hover:text-orange-300 hover:underline"
-              >
-                {t(link.label) || link.label}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-8 text-white text-base">
+            {links.map((link: NavLink) =>
+              link.hasDropdown ? (
+                <Popover
+                  key={link.label}
+                  showArrow={false} 
+                  offset={20}
+                  
+                  placement="bottom-start" 
+                   isOpen={isServicesPopoverOpen} 
+                  onOpenChange={setIsServicesPopoverOpen} 
+                >
+                  <PopoverTrigger>
+                    <Button
+                        variant="light"
+                      className="p-0 bg-transparent text-white font-normal hover:opacity-80 data-[hover=true]:bg-transparent"
+                      endContent={
+                        <BiChevronDown
+                          className={`text-xl transition-transform ${
+                            isServicesPopoverOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      }
+                    >
+                      {t(link.label)}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    className="bg-[#6D3E2C] shadow-lg rounded-md w-full min-w-full whitespace-nowrap overflow-hidden transform-gpu z-40 p-8"
+                  >
+                    <div className="grid grid-cols-5 gap-x-8 gap-y-4">
+                      {(() => {
+                        const numColumns = 5;
+                        const itemsPerColumn = Math.ceil(
+                          link.dropdownItems!.length / numColumns
+                        );
+                        const columns = Array.from(
+                          { length: numColumns },
+                          (_, colIndex) => {
+                            const start = colIndex * itemsPerColumn;
+                            const end = start + itemsPerColumn;
+                            return link.dropdownItems!.slice(start, end);
+                          }
+                        );
+
+                        return columns.map((columnItems, colIndex) => (
+                          <div key={colIndex} className="flex flex-col space-y-2">
+                            {columnItems.map((item) => (
+                              <Link
+                                key={item.label}
+                                href={
+                                  locale === "en"
+                                    ? item.href
+                                    : `/${locale}${item.href}`
+                                }
+                                className="block text-white hover:text-gray-300 transition-colors text-sm"
+                              
+                                onClick={() => setIsServicesPopoverOpen(false)}
+                              >
+                                {t(item.label)}
+                              </Link>
+                            ))}
+                          </div>
+                        ));
+                      })()}
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={locale === "en" ? link.href : `/${locale}${link.href}`}
+                  className="transition hover:opacity-80"
+                >
+                  {t(link.label)}
+                </Link>
+              )
+            )}
           </div>
 
-          {/* Search Component */}
-          <div className="hidden items-center justify-center sm:flex">
-            <SearchAutocomplete setIsMenuOpen={setIsMenuOpen} />
-          </div>
-
-          {/* Language Switcher and Mobile Menu */}
-          <div className="flex items-center space-x-2">
-            {/* Language Dropdown */}
-            <Dropdown  className="w-[100px]">
+           <div className="flex items-center gap-4 space-x-4">
+             <Dropdown
+             classNames={{
+              content: "bg-[#6D3E2C] text-white",
+              
+             }}>
               <DropdownTrigger>
                 <Button
-                  className="flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 min-w-unit-0"
-                  variant="flat"
+                  className="flex items-center justify-center gap-1 bg-transparent  min-w-unit-0 text-white border-white/20 px-4 py-2"
+                  variant="bordered"
                   aria-label="Select Language"
                 >
-                  <BiWorld className="text-xl text-white" />
-                  <span className="text-white text-sm hidden sm:inline">
+                  <span className="text-white text-sm">
                     {locale === "ar" ? "AR" : "EN"}
                   </span>
+                  <BiChevronDown className={`text-xl transition-transform`} />
                 </Button>
               </DropdownTrigger>
-              <DropdownMenu 
+              <DropdownMenu
                 aria-label="Language Selection"
                 items={languageOptions}
                 onAction={(key) => handleLanguageChange(key)}
                 selectedKeys={[locale]}
                 selectionMode="single"
-  
+                classNames={{
+                  base: "bg-[#6D3E2C] text-white",
+                  list: "bg-[#6D3E2C] text-white",
+                }}
+                className="bg-[#6D3E2C] text-white"
               >
                 {(item) => (
                   <DropdownItem
                     key={item.key}
-                    className={`flex items-center gap-2 ${item.key === locale ? "bg-primary/10" : ""}`}
+                    className={`flex items-center gap-2 text-white data-[hover=true]:bg-white/10 ${
+                      item.key === locale ? "bg-white/20" : ""
+                    }`}
                   >
-                    <span>{item.flag}</span>
                     <span>{item.label}</span>
                   </DropdownItem>
                 )}
               </DropdownMenu>
             </Dropdown>
 
+             <Button
+              as={Link}
+              href="/book-appointment"
+              variant="bordered"
+              className="hidden md:flex text-white border-white hover:bg-white hover:text-[#6D3E2C] transition-colors"
+            >
+              {t("bookAppointment")}
+            </Button>
+
             {/* Mobile Menu Toggle */}
             <Button
-              className="flex items-center justify-center border-white/20 md:hidden"
+              className="flex items-center justify-center border-white/20 md:hidden text-white"
               isIconOnly
               variant="bordered"
               onPress={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Toggle mobile menu"
             >
               {isMenuOpen ? (
-                <BiX className="text-xl text-white" />
+                <BiX className="text-xl" />
               ) : (
-                <BiMenu className="text-xl text-white" />
+                <BiMenu className="text-xl" />
               )}
             </Button>
           </div>
         </div>
       </nav>
-      
-      {/* Mobile Drawer Menu */}
+
       <DrawerMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </div>
   );
