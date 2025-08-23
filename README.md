@@ -1,50 +1,87 @@
-#  marketly 
+# 🛍️ IO-Tech Task  
 
-![Next.js](https://img.shields.io/badge/Next.js-15.2.3-black)
-![React](https://img.shields.io/badge/React-19.0.0-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![Zustand](https://img.shields.io/badge/Zustand-5.0.1-lightgrey)
-![Swiper](https://img.shields.io/badge/Swiper-11.2.6-yellowgreen)
-![DummyJSON](https://img.shields.io/badge/DummyJSON-11.2.6-yellowgreen)
+![Next.js](https://img.shields.io/badge/Next.js-15.2.3-black)  
+![React](https://img.shields.io/badge/React-19.0.0-blue)  
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)  
+![Redux](https://img.shields.io/badge/Redux-5.0.1-lightgrey)  
+![Swiper](https://img.shields.io/badge/Swiper-11.2.6-yellowgreen)  
+![Strapi](https://img.shields.io/badge/Strapi-Backend-2E7D32)  
 
-A cutting-edge fashion e-commerce platform featuring modern UI components, smooth animations, and robust state management.
+A modern **e-commerce web application** built with **Next.js (frontend)** and **Strapi (backend)**.  
+This project demonstrates scalable architecture, modern UI components, smooth animations, and strong state management.  
 
- 
-## 📚 DummyJSON
+---
 
-https://dummyjson.com/
+## 🌐 Demo Links  
 
-## ✨ Demo
+- **Frontend (Next.js)** → [Live Demo](https://i-o-tech.vercel.app/en)  
+- **Backend (Strapi CMS)** → [Admin Dashboard](https://prepared-surprise-7a86930000.strapiapp.com/admin)  
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Access_Now-FF6B6B)](https://marketly.vercel.app/)
+---
 
- 
-## 📸 Application Preview
+## 📸 Preview  
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| ![Desktop Screenshot](./public/images/large-image.png) | ![Mobile Screenshot](./public/images/small-image.png) |
-## 🚀 Features
 
-- **Hero UI Components** (@heroui integration)
-- **Smooth Animations** (Framer Motion)
-- **Interactive Product Carousels** (Swiper)
- - **State-of-the-Art State Management** (Zustand)
-- **Data Fetching** (TanStack Query)
-- **Responsive Design** (Tailwind CSS)
-- **Infinite Scroll** (React Intersection Observer)
-- **Performance Optimization** (React Query Caching)
-- **Testing** (Jest)
+---
 
-## 📦 Installation
+## 🚀 Features  
 
+### Frontend (Next.js)  
+- **Hero UI Components** powered by `@heroui`  
+- **Animations** with **Framer Motion**  
+- **Interactive Carousels** using **Swiper**  
+- **State Management** with **Redux**  
+- **API Data Fetching** using **TanStack Query**  
+- **Responsive Design** with **Tailwind CSS**  
+- **Infinite Scroll** (Intersection Observer)  
+- **Performance Optimization** (React Query Caching)  
+- **Unit Testing** with **Jest**  
+
+### Backend (Strapi)  
+- **Headless CMS** for product & content management  
+- **REST & GraphQL APIs** for frontend integration  
+- **Admin Dashboard** for managing users, content, and blog data  
+
+---
+
+## 📦 Installation  
+
+### 1️⃣ Clone Repository  
 ```bash
-# Clone the repository
-git clone https://github.com/SaLim-Sayed/marketly
-cd marketly
+git clone https://github.com/SaLim-Sayed/i-o-tech-task
+cd i-o-tech-task
+
+
+2️⃣ Setup Frontend (Next.js - master branch)
+
+# Switch to frontend branch
+git checkout master
 
 # Install dependencies
-npm marketly
+npm install
 
-# Start development server
+# Run development server
 npm run dev
+
+
+3️⃣ Setup Backend (Strapi - backend branch)
+
+# Switch to backend branch
+git checkout backend
+
+# Install dependencies
+npm install
+
+# Run Strapi server
+npm run develop
+
+
+📚 Tech Stack
+
+Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, Redux, TanStack Query, Swiper, Framer Motion
+
+Backend: Strapi CMS
+
+Deployment: Vercel (Frontend) + Strapi Cloud (Backend)
