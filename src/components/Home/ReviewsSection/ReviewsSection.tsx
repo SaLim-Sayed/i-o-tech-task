@@ -17,17 +17,15 @@ interface ReviewsSectionProps {
 const getReviewPhotoUrl = (
   photo: ReviewContent["photo"] | undefined
 ): string => {
-  const baseUrl = "https://prepared-surprise-7a86930000.strapiapp.com"; // Base URL for Strapi assets
-  if (photo?.formats?.small?.url) {
-    return `${baseUrl}${photo.formats.small.url}`;
+   if (photo?.formats?.small?.url) {
+    return `${photo.formats.small.url}`;
   }
   if (photo?.url) {
-    return `${baseUrl}${photo.url}`;
+    return `${photo.url}`;
   }
-  return "/images/person-placeholder.jpg"; // Fallback image if no photo is available
+  return "/images/person-placeholder.jpg"; 
 };
 
-// Utility function to format API data for the component, handling localization
 const formatApiReviews = (
   data: ReviewContent[],
   locale: "en" | "ar"
@@ -140,7 +138,7 @@ const ReviewsSection = ({ locale = "en" }: ReviewsSectionProps) => {
           </Swiper>
 
           {/* Custom Navigation Arrows for Swiper */}
-          <div className="absolute bottom-10 right-10 flex space-x-4 z-10">
+          <div className="absolute bottom-5 ltr:right-10 rtl:left-10  flex rtl:flex-row-reverse items-center gap-4 z-10">
             {/* Previous Button */}
             <div className="reviews-swiper-button-prev p-3 rounded-full bg-white/20 hover:bg-white/30 text-white cursor-pointer transition-colors flex items-center justify-center shadow-lg w-12 h-12">
                  <IoArrowBack/>

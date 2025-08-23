@@ -8,7 +8,7 @@ export const formatApiSlides = (data: any[]): SlideData[] => {
         description: item.subtitle,
         imageSrc: DEFAULT_BACKGROUND_IMAGE,
         personImage: item.media?.formats?.small?.url
-            ? `${API_BASE_URL}${item.media.formats.small.url}`
+            ? `${item.media.formats.small.url}`
             : DEFAULT_PERSON_PLACEHOLDER,
         locale: item.locale,
         localizations: item.localizations || [],

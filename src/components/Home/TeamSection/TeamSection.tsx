@@ -15,22 +15,19 @@ import {
     TeamMembersResponse,
 } from "../@types/team"; // Adjust path as necessary
 
-// Utility function to get the absolute URL for the team member's photo
-const getTeamMemberPhotoUrl = (
+ const getTeamMemberPhotoUrl = (
     photo: TeamMemberContent["photo"] | undefined
 ): string => {
-    const baseUrl = "https://prepared-surprise-7a86930000.strapiapp.com"; // Base URL for Strapi assets
-    if (photo?.formats?.small?.url) {
-        return `${baseUrl}${photo.formats.small.url}`;
+     if (photo?.formats?.small?.url) {
+        return `${photo.formats.small.url}`;
     }
     if (photo?.url) {
-        return `${baseUrl}${photo.url}`;
+        return `${photo.url}`;
     }
-    return "/images/person-placeholder.jpg"; // Fallback image if no photo is available
+    return "/images/person-placeholder.jpg";
 };
 
-// Utility function to format API data for the component
-const formatApiTeamMembers = (
+ const formatApiTeamMembers = (
     data: TeamMemberContent[]
 ): ProcessedTeamMember[] => {
     return data.map((item: TeamMemberContent) => ({

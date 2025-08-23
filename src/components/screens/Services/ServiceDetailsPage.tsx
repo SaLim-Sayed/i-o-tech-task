@@ -128,19 +128,18 @@ export default function ServiceDetailsPage() {
                     <div className="relative  container  mx-auto  px-4 sm:px-8 lg:px-16 z-10">
                         <Button
                             onPress={() => router.back()}
-                            className="flex items-center text-gray-200 hover:text-white transition-colors mb-8"
-                            aria-label="Go back to previous page"
-                        >
+                              className="flex items-center bg-transparent text-gray-900 hover:text-gray-900 transition-colors mb-8"
+                         >
                             <BiArrowBack className="w-5 h-5 rtl:rotate-180 mr-2" />
                             Back
                         </Button>
 
-                        <h1 className="text-4xl font-bold text-white mb-6">
+                        <h1 className="text-4xl font-bold text-gray-900 mb-6">
                             {currentServiceContent.title}
                         </h1>
 
                         {currentServiceContent.description && (
-                            <div className="text-gray-100 leading-relaxed mb-10 max-w-4xl">
+                            <div className="text-gray-900 leading-relaxed mb-10 max-w-4xl">
                                 <RichTextRenderer content={currentServiceContent.description} />
                             </div>
                         )}
