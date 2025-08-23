@@ -38,17 +38,15 @@ import {
     }));
 };
 
-// Swiper configuration for the team section
-const TEAM_SWIPER_CONFIG = {
+ const TEAM_SWIPER_CONFIG = {
     modules: [Navigation, A11y],
-    spaceBetween: 30, // Space between slides
+    spaceBetween: 30,
     navigation: {
-        nextEl: ".team-swiper-button-next", // Custom next button class
-        prevEl: ".team-swiper-button-prev", // Custom prev button class
+        nextEl: ".team-swiper-button-next",
+        prevEl: ".team-swiper-button-prev",
     },
-    loop: true, // Loop through slides
+    loop: true,
     breakpoints: {
-        // Responsive settings for slidesPerView
         320: {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -68,11 +66,10 @@ const TEAM_SWIPER_CONFIG = {
 const TeamSection = () => {
     const { data, isLoading, error } = useApiQuery<TeamMembersResponse>({
         key: ["team-members"],
-        endpoint: "team-members", // Ensure 'photo' relationship is populated
+        endpoint: "team-members",
     });
 
-    // Process the fetched data or use an empty array if not available
-    const teamMembers = data?.data ? formatApiTeamMembers(data.data) : [];
+     const teamMembers = data?.data ? formatApiTeamMembers(data.data) : [];
 
     if (isLoading) {
         return (
@@ -84,7 +81,6 @@ const TeamSection = () => {
 
     if (error) {
         console.error("Error loading team members:", error);
-        // Display an error message or provide fallback content
         return (
             <section className="bg-gray-100 py-20 flex items-center justify-center min-h-[500px]">
                 <div className="text-red-600 text-xl">
@@ -97,8 +93,7 @@ const TeamSection = () => {
     return (
         <section className="bg-gray-100 py-20">
             <div className="container mx-auto px-4 sm:px-8 lg:px-16 text-center">
-                {/* Section Title and Description */}
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Team</h2>
+                 <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Team</h2>
                 <p className="text-gray-600 max-w-3xl mx-auto mb-12">
                     Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
