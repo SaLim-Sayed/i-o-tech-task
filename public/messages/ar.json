@@ -28,7 +28,19 @@
     "Estates": "التركات",
     "Insurance": "التأمين",
     "InternalRegulationsforCompanies": "اللوائح الداخلية للشركات",
-    "ConfectionaryIndustry": "صناعة الحلويات"
+    "ConfectionaryIndustry": "صناعة الحلويات",
+    "footer": {
+      "heading": "ابق على تواصل",
+      "emailPlaceholder": "بريدك الإلكتروني",
+      "subscribeButton": "اشتراك",
+      "contacts": "اتصالات",
+      "about": "حول",
+      "ourStrategy": "استراتيجيتنا",
+      "ourAdvantages": "مزايا_نا",
+      "socialResponsibility": "المسؤولية الاجتماعية",
+      "ourServices": "خدماتنا",
+      "copyright": "© {year} جميع الحقوق محفوظة."
+    }
   },
  
   "Footer": {

@@ -27,7 +27,19 @@
     "Estates": "Estates",
     "Insurance": "Insurance",
     "InternalRegulationsforCompanies": "Internal Regulations for Companies",
-    "ConfectionaryIndustry": "Confectionary Industry"
+    "ConfectionaryIndustry": "Confectionary Industry",
+    "footer": {
+      "heading": "Stay Connected", 
+      "emailPlaceholder": "Your Email",
+      "subscribeButton": "Subscribe",
+      "contacts": "Contacts",
+      "about": "About",
+      "ourStrategy": "Our Strategy",
+      "ourAdvantages": "Our Advantages",
+      "socialResponsibility": "Social Responsibility",
+      "ourServices": "Our Services",
+      "copyright": "© {year} All rights reserved."
+    }
   },
   "Footer": {
     "newsletter": {
